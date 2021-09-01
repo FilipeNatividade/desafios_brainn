@@ -80,6 +80,11 @@ p {
   width: 85%;
 }
 
+li{
+  margin: 5px ;
+  margin-left: 55px;
+}
+
 button {
   border: none;
   border-radius: 5px;
