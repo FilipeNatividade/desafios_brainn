@@ -14,4 +14,5 @@ const Sidebar = ({ arr }) => {
     </aside>
   );
 };
+
 export default Sidebar;
