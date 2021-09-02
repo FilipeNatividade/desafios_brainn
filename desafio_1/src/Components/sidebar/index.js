@@ -1,10 +1,10 @@
-import Title from "../Title";
-import List from "../List";
+import Title from "../title";
+import List from "../list";
 
 const Sidebar = () => {
   return (
     <aside>
-      <Title>Sidebar</Title>
+      <Title valueH={2} >Sidebar</Title>
       <List
         arrayList={["azul", "vermelho", "amarelo", "roxo", "cinza", "rosa"]}
       />

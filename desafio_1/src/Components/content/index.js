@@ -1,10 +1,10 @@
-import Title from "../Title";
-import Paragraph from "../Paragraph";
+import Title from "../title";
+import Paragraph from "../paragraph";
 
 const Content = () => {
   return (
     <main>
-      <Title>Content</Title>
+      <Title valueH={2}>Content</Title>
       <Paragraph>
         Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
         incididunt sunt. Commodo consectetur consectetur incididunt officia est

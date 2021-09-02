@@ -1,8 +1,8 @@
-import Header from "./Components/Header";
-import Menu from "./Components/Menu";
-import Sidebar from "./Components/Sidebar";
-import Content from "./Components/Content";
-import Footer from "./Components/Footer";
+import Header from "./Components/header";
+import Menu from "./Components/menu";
+import Sidebar from "./Components/sidebar";
+import Content from "./Components/content";
+import Footer from "./Components/footer";
 
 const App = () => {
   return (
