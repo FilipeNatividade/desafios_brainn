@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/header";
 import Menu from "./components/menu";
 import Sidebar from "./components/sidebar";
@@ -38,13 +39,20 @@ const dogs = [
 ];
 
 const App = () => {
+  const [stateTitle, setStateTitle] = useState("");
+  const [stateArticle, setStateArticle] = useState("");
+  
   return (
     <div className="app">
       <Header />
       <Menu />
       <section>
-        <Sidebar arr={dogs}/>
-        <Content arr={dogs}/>
+        <Sidebar
+          arr={dogs}
+          setStateArticle={setStateArticle}
+          setStateTitle={setStateTitle}
+        />
+        <Content stateTitle={stateTitle} stateArticle={stateArticle} />
       </section>
       <Footer />
     </div>

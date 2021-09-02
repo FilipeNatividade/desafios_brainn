@@ -111,3 +111,7 @@ button {
   background-color: #9400d3;
   color: #00ff00;
 }
+
+a{
+  cursor: pointer;
+}
