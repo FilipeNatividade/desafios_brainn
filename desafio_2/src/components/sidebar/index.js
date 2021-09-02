@@ -13,7 +13,7 @@ const handleStates = (item) => {
       <ul>
         {arr.map((item) => (
           <li key={item.id}>
-            <a href onClick={() => handleStates(item)}>{item.name}</a>
+            <button className='buttonLi' onClick={() => handleStates(item)}>{item.name}</button>
           </li>
         ))}
       </ul>

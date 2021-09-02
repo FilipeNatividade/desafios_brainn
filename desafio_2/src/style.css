@@ -112,6 +112,12 @@ button {
   color: #00ff00;
 }
 
-a{
+/* a{
   cursor: pointer;
+} */
+
+.buttonLi{
+  text-align: left;
+  background-color: transparent;
+  width: 150px;
 }
