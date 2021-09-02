@@ -1,38 +1,22 @@
+import { useEffect, useState } from "react";
 import Title from "../title";
-import Paragraph from "../paragraph";
 
-const Content = () => {
+const Content = ({ arr }) => {
+  const [stateTitle, setStateTitle] = useState("");
+  const [stateArticle, setStateArticle] = useState("");
+
+
+  useEffect(() => (
+    setStateTitle(arr[0].name),
+    setStateArticle(arr[0].content)
+  ), [arr])
+
   return (
     <main>
-      <Title valueH={2}>Content</Title>
-      <Paragraph>
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-      </Paragraph>
-      <Paragraph>
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-        Laboris deserunt laborum reprehenderit ea aliquip magna adipisicing
-        incididunt sunt. Commodo consectetur consectetur incididunt officia est
-        incididunt Lorem sint. Id magna commodo cillum nisi consequat ad aliquip
-        duis in adipisicing proident laborum.
-      </Paragraph>
+      <Title valueH={2}>{stateTitle}</Title>
+      <br/>
+
+      <img src={stateArticle} alt={stateTitle} />
     </main>
   );
 };

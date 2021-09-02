@@ -44,7 +44,7 @@ const App = () => {
       <Menu />
       <section>
         <Sidebar arr={dogs}/>
-        <Content />
+        <Content arr={dogs}/>
       </section>
       <Footer />
     </div>
