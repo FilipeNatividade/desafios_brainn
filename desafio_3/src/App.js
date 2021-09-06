@@ -1,11 +1,16 @@
+import GlobalStyle from "./GlobalStyle/style";
 import Menu from "./Components/Menu";
 import Routes from "./Routes";
+import GetCars from "./Components/GetCars";
 
 const App = () => {
+
   return (
-    <div>
+    <div >
+      <GlobalStyle/>
       <Menu />
       <Routes />
+      <GetCars/>
     </div>
   );
 };

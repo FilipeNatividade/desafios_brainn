@@ -1,20 +1,15 @@
 import { Route, Switch } from "react-router";
 import DeleteCars from "./Components/DeleteCars";
-import RegisterCars from "./Components/DeleteCars";
-import GetCars from "./Components/GetCars";
+import RegisterCars from "./Components/RegisterCars";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        <GetCars />
-      </Route>
-
-      <Route path="/register">
+      <Route exact path="/register">
         <RegisterCars />
       </Route>
 
-      <Route path="/delete">
+      <Route exact path="/delete">
         <DeleteCars />
       </Route>
     </Switch>
