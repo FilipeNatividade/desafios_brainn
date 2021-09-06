@@ -4,14 +4,15 @@ const StatesAppContext = createContext();
 
 export const StatesAppProvider = ({ children }) => {
   const url = "http://localhost:3333/cars";
-  return(
+
+  return (
     <StatesAppContext.Provider
-    value={{
-        url
-    }}
+      value={{
+        url,
+      }}
     >
-        {children}
+      {children}
     </StatesAppContext.Provider>
-  )
+  );
 };
 export const useStateApp = () => useContext(StatesAppContext);
