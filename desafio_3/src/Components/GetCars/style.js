@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Cards = styled.div`
+  border-radius: 5px;
   background-color: #87cefa;
   font-size: 20px;
   font-weight: bold;
@@ -35,6 +36,7 @@ export const Paragraph = styled.p`
 
 export const ColorCar = styled.span`
   background-color: ${(props) => props.colorCar};
+  border: ${(props) => props.colorCar === '#87cefa' ? '2px solid #0400cd' : 'none'};
   height: 30px;
   width: 100px;
 `;
