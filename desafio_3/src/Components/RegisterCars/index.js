@@ -1,37 +1,28 @@
 import { useStateApp } from "../../Providers/StatesApp";
 import { Container, InputLabel } from "./style";
-import { useState } from "react";
 
 const RegisterCars = () => {
   const { url } = useStateApp();
 
-  let valuesInput = {
-    image: "",
-    brandModel: "",
-    year: "",
-    plate: "",
-    color: "",
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    valuesInput = {
+    let inputValues = {
       image: e.target.elements.image.value,
       brandModel: e.target.elements.brandModel.value,
       year: e.target.elements.year.value,
       plate: e.target.elements.plate.value,
       color: e.target.elements.color.value,
     };
-
-    const result = fetch(url, {
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(valuesInput),
+      body: JSON.stringify(inputValues),
     }).catch((error) => console.log(error));
-  };
 
+    e.target.reset();
+  };
   return (
     <Container onSubmit={(e) => handleSubmit(e)}>
       <InputLabel>

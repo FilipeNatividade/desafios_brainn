@@ -1,29 +1,23 @@
 import { useStateApp } from "../../Providers/StatesApp";
+import { Container, Cards, Paragraph, ColorCar } from "./style";
 
 const GetCars = () => {
   const { result } = useStateApp();
-  
-
-
 
   return (
-    <div>
-      {
-        result.map(item => (
-          <div key={item.plate} style={{border:'2px solid red', margin:'15px 0'}}>
-          <p>{item.image}</p>
-          <br/>
-          <p>{item.brandModel}</p>
-          <br/>
-          <p>{item.color}</p>
-          <br/>
-          <p>{item.plate}</p>
-          <br/>
-          <p>{item.year}</p>
-          </div>
-        ))
-      }
-    </div>
+    <Container>
+      {result.map((item) => (
+        <Cards key={item.plate}>
+          <img src={item.image} alt={item.brandModel} />
+          <h2>{item.brandModel}</h2>
+          <Paragraph>
+            Cor: <ColorCar colorCar={item.color} />
+          </Paragraph>
+          <Paragraph>Placa: <span>{item.plate}</span></Paragraph>
+          <Paragraph>Ano: <span>{item.year}</span></Paragraph>
+        </Cards>
+      ))}
+    </Container>
   );
 };
 
