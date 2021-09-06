@@ -19,16 +19,14 @@ const RegisterCars = () => {
       color: e.target.elements.color.value,
     });
 
-    // const result = fetch(url, {
-    //   method:'POST',
-    //   headers: {
-    //     Accept: "application/json",
-    //   "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data)
-    // })
-    //   .then((response) => response.json())
-    //   .then((response) => console.log(response));
+    fetch(url, {
+      method:'POST',
+      headers: {
+        Accept: "application/json",
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify(valuesInput)
+    })
   };
 
   return (
