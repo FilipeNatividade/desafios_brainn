@@ -1,58 +1,61 @@
-import { useState } from "react";
 import { useStateApp } from "../../Providers/StatesApp";
 import { Container, InputLabel } from "./style";
+import { useState } from "react";
 
 const RegisterCars = () => {
   const { url } = useStateApp();
 
-  const [valuesInput, setValuesInput] = useState({});
-
-  console.log(valuesInput)
+  let valuesInput = {
+    image: "",
+    brandModel: "",
+    year: "",
+    plate: "",
+    color: "",
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValuesInput({
+    valuesInput = {
       image: e.target.elements.image.value,
       brandModel: e.target.elements.brandModel.value,
       year: e.target.elements.year.value,
       plate: e.target.elements.plate.value,
       color: e.target.elements.color.value,
-    });
+    };
 
-    fetch(url, {
-      method:'POST',
+    const result = fetch(url, {
+      method: "POST",
       headers: {
-        Accept: "application/json",
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(valuesInput)
-    })
+      body: JSON.stringify(valuesInput),
+    }).catch((error) => console.log(error));
   };
 
   return (
     <Container onSubmit={(e) => handleSubmit(e)}>
       <InputLabel>
-        <label for="image">Imagem (URL)</label>
+        <label htmlFor="image">Imagem (URL)</label>
         <input type="text" name="image" />
       </InputLabel>
 
       <InputLabel>
-        <label for="brandModel">Marca / Modelo</label>
+        <label htmlFor="brandModel">Marca / Modelo</label>
         <input type="text" name="brandModel" />
       </InputLabel>
 
       <InputLabel>
-        <label for="year">Ano</label>
+        <label htmlFor="year">Ano</label>
         <input type="number" name="year" />
       </InputLabel>
 
       <InputLabel>
-        <label for="plate">Placa</label>
+        <label htmlFor="plate">Placa</label>
         <input type="text" name="plate" />
       </InputLabel>
 
       <InputLabel className="colorContainer">
-        <label for="color">Cor</label>
+        <label htmlFor="color">Cor</label>
         <input type="color" name="color" />
       </InputLabel>
 
