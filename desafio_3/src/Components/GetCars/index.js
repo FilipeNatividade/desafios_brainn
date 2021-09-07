@@ -1,4 +1,5 @@
 import { useStateApp } from "../../Providers/StatesApp";
+import Button from "../Button";
 import { Container, Cards, Paragraph, ColorCar } from "./style";
 
 const GetCars = () => {
@@ -13,8 +14,13 @@ const GetCars = () => {
           <Paragraph>
             Cor: <ColorCar colorCar={item.color} />
           </Paragraph>
-          <Paragraph>Placa: <span>{item.plate}</span></Paragraph>
-          <Paragraph>Ano: <span>{item.year}</span></Paragraph>
+          <Paragraph>
+            Placa: <span>{item.plate}</span>
+          </Paragraph>
+          <Paragraph>
+            Ano: <span>{item.year}</span>
+          </Paragraph>
+          <Button car={item.plate}/>
         </Cards>
       ))}
     </Container>
