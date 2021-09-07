@@ -4,7 +4,6 @@ export const Container = styled.div`
   background-color: #0400cd;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 `;
 
 export const Cards = styled.div`
@@ -14,7 +13,7 @@ export const Cards = styled.div`
   font-weight: bold;
   margin: 20px;
   padding: 15px;
-  width: 350px;
+  width: 100%;
   img {
     border: 3px solid #0400cd;
     margin-bottom: 15px;
@@ -23,6 +22,9 @@ export const Cards = styled.div`
   h2 {
     font-size: 25px;
     margin-bottom: 15px;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 350px;
   }
 `;
 

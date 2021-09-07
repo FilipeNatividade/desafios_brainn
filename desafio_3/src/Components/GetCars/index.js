@@ -1,5 +1,5 @@
 import { useStateApp } from "../../Providers/StatesApp";
-import Button from "../Button";
+import ButtonDelete from "../ButtonDelete";
 import { Container, Cards, Paragraph, ColorCar } from "./style";
 
 const GetCars = () => {
@@ -20,7 +20,7 @@ const GetCars = () => {
           <Paragraph>
             Ano: <span>{item.year}</span>
           </Paragraph>
-          <Button car={item.plate}/>
+          <ButtonDelete car={item.plate}/>
         </Cards>
       ))}
     </Container>

@@ -6,12 +6,16 @@ export const StatesAppProvider = ({ children }) => {
   const url = "http://localhost:3333/cars";
 
   const [result, setResult] = useState([]);
+  const [message, setMessage] = useState({
+    error: false,
+    text: "",
+  });
 
   useEffect(() => {
     const getRequest = () => {
       fetch(url)
         .then((response) => response.json())
-        .then((responde) => setResult(responde));
+        .then((responde) => setResult(responde))
     };
 
     getRequest();
@@ -24,6 +28,8 @@ export const StatesAppProvider = ({ children }) => {
       value={{
         url,
         result,
+        message,
+        setMessage,
       }}
     >
       {children}
