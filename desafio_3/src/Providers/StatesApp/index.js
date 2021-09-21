@@ -15,13 +15,14 @@ export const StatesAppProvider = ({ children }) => {
     const getRequest = () => {
       fetch(url)
         .then((response) => response.json())
-        .then((responde) => setResult(responde))
+        .then((responde) => {
+          setResult(responde)})
     };
 
     getRequest();
 
     return () => {};
-  }, [url, result]);
+  }, [result.palte]);
 
   return (
     <StatesAppContext.Provider
